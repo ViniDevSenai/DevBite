@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevBite — finalize seu pedido.">
+  <title>DevBite | Meu Carrinho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement" id="announcement">Entrega grátis em pedidos acima de R$ 80,00.</div>
+
+  <!-- Cabeçalho com navegação principal -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo-link">DevBite</a>
+
+      <nav aria-label="Navegação principal" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="nav-cardapio">Cardápio</a></li>
+          <li>
+            <a href="checkout.html" class="nav-link active" id="nav-carrinho" aria-current="page">
+              Meu Carrinho
+              <span class="cart-count" id="cart-count">4</span>
+            </a>
+          </li>
+          <li><a href="admin.html" class="nav-link" id="nav-admin">Área Restrita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <div class="page-title">
+        <h1>Finalizar pedido</h1>
+        <p>Confira os itens e informe onde vamos entregar.</p>
+      </div>
+
+      <div class="checkout-layout">
+
+        <!-- Carrinho -->
+        <section class="panel" id="cart-section" aria-labelledby="cart-title">
+          <div class="panel-title">
+            <h2 id="cart-title">Seu carrinho</h2>
+            <button type="button" class="btn btn-ghost" id="btn-clear-cart">Esvaziar carrinho</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table" id="cart-table">
+              <thead>
+                <tr>
+                  <th scope="col">Produto</th>
+                  <th scope="col">Preço unitário</th>
+                  <th scope="col">Quantidade</th>
+                  <th scope="col">Subtotal</th>
+                  <th scope="col">Ação</th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+
+                <tr id="cart-item-1" data-id="1">
+                  <td>
+                    <div class="cart-product">
+                      <img src="img/stack-overflow-burger.jpg" alt="" width="56" height="56">
+                      <span>Stack Overflow Burger</span>
+                    </div>
+                  </td>
+                  <td class="num" data-label="Preço unitário" id="unit-price-1">R$ 34,90</td>
+                  <td data-label="Quantidade">
+                    <div class="qty-control">
+                      <button type="button" class="qty-btn" id="btn-qty-minus-1" data-id="1" aria-label="Diminuir quantidade">−</button>
+                      <input type="number" class="qty-input" id="qty-1" name="qty-1" value="1" min="1" aria-label="Quantidade de Stack Overflow Burger">
+                      <button type="button" class="qty-btn" id="btn-qty-plus-1" data-id="1" aria-label="Aumentar quantidade">+</button>
+                    </div>
+                  </td>
+                  <td class="num" data-label="Subtotal" id="subtotal-1">R$ 34,90</td>
+                  <td class="cell-remove"><button type="button" class="link-remove btn-remove" id="btn-remove-1" data-id="1">Remover</button></td>
+                </tr>
+
+                <tr id="cart-item-4" data-id="4">
+                  <td>
+                    <div class="cart-product">
+                      <img src="img/java-coffee.jpg" alt="" width="56" height="56">
+                      <span>Java Coffee</span>
+                    </div>
+                  </td>
+                  <td class="num" data-label="Preço unitário" id="unit-price-4">R$ 9,90</td>
+                  <td data-label="Quantidade">
+                    <div class="qty-control">
+                      <button type="button" class="qty-btn" id="btn-qty-minus-4" data-id="4" aria-label="Diminuir quantidade">−</button>
+                      <input type="number" class="qty-input" id="qty-4" name="qty-4" value="2" min="1" aria-label="Quantidade de Java Coffee">
+                      <button type="button" class="qty-btn" id="btn-qty-plus-4" data-id="4" aria-label="Aumentar quantidade">+</button>
+                    </div>
+                  </td>
+                  <td class="num" data-label="Subtotal" id="subtotal-4">R$ 19,80</td>
+                  <td class="cell-remove"><button type="button" class="link-remove btn-remove" id="btn-remove-4" data-id="4">Remover</button></td>
+                </tr>
+
+                <tr id="cart-item-7" data-id="7">
+                  <td>
+                    <div class="cart-product">
+                      <img src="img/brownie-404.jpg" alt="" width="56" height="56">
+                      <span>Brownie 404</span>
+                    </div>
+                  </td>
+                  <td class="num" data-label="Preço unitário" id="unit-price-7">R$ 12,00</td>
+                  <td data-label="Quantidade">
+                    <div class="qty-control">
+                      <button type="button" class="qty-btn" id="btn-qty-minus-7" data-id="7" aria-label="Diminuir quantidade">−</button>
+                      <input type="number" class="qty-input" id="qty-7" name="qty-7" value="1" min="1" aria-label="Quantidade de Brownie 404">
+                      <button type="button" class="qty-btn" id="btn-qty-plus-7" data-id="7" aria-label="Aumentar quantidade">+</button>
+                    </div>
+                  </td>
+                  <td class="num" data-label="Subtotal" id="subtotal-7">R$ 12,00</td>
+                  <td class="cell-remove"><button type="button" class="link-remove btn-remove" id="btn-remove-7" data-id="7">Remover</button></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="order-summary" id="order-summary">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">R$ 66,70</span>
+            </div>
+            <div class="summary-row">
+              <span>Taxa de entrega</span>
+              <span id="delivery-fee">R$ 5,00</span>
+            </div>
+            <div class="total-box" id="total-box">
+              <span>Total</span>
+              <span class="total-value" id="cart-total">R$ 71,70</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Entrega e pagamento -->
+        <section class="panel" id="checkout-section" aria-labelledby="checkout-title">
+          <div class="panel-title">
+            <h2 id="checkout-title">Entrega e pagamento</h2>
+          </div>
+
+          <form class="form" id="checkout-form" name="checkout-form" action="#" method="post">
+
+            <div class="form-group">
+              <label for="cliente-nome">Nome completo</label>
+              <input type="text" class="form-control" id="cliente-nome" name="cliente-nome" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-endereco">Endereço</label>
+              <input type="text" class="form-control" id="cliente-endereco" name="cliente-endereco" placeholder="Rua, número e bairro" autocomplete="street-address" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cliente-complemento">Complemento</label>
+                <input type="text" class="form-control" id="cliente-complemento" name="cliente-complemento" placeholder="Opcional">
+              </div>
+              <div class="form-group">
+                <label for="cliente-telefone">Telefone</label>
+                <input type="tel" class="form-control" id="cliente-telefone" name="cliente-telefone" placeholder="(31) 90000-0000" autocomplete="tel" required>
+              </div>
+            </div>
+
+            <fieldset id="payment-fieldset">
+              <legend class="form-legend">Forma de pagamento</legend>
+              <div class="payment-options">
+                <label class="payment-option" for="pagamento-pix">
+                  <input type="radio" id="pagamento-pix" name="pagamento" value="pix" checked>
+                  Pix
+                </label>
+                <label class="payment-option" for="pagamento-cartao">
+                  <input type="radio" id="pagamento-cartao" name="pagamento" value="cartao">
+                  Cartão
+                </label>
+                <label class="payment-option" for="pagamento-dinheiro">
+                  <input type="radio" id="pagamento-dinheiro" name="pagamento" value="dinheiro">
+                  Dinheiro
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-group" id="troco-group">
+              <label for="cliente-troco">Troco para</label>
+              <input type="text" class="form-control" id="cliente-troco" name="cliente-troco" placeholder="R$ 0,00">
+              <span class="form-hint">Só para pagamento em dinheiro.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cliente-observacao">Observações</label>
+              <textarea class="form-control" id="cliente-observacao" name="cliente-observacao" placeholder="Ex.: sem cebola"></textarea>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn-finalizar-pedido">Finalizar pedido</button>
+              <a href="index.html" class="btn btn-ghost" id="btn-continuar-comprando">Continuar comprando</a>
+            </div>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <span class="logo">DevBite</span>
+        <span>Lanchonete para profissionais de tecnologia.</span>
+      </div>
+      <div class="footer-info">
+        <strong>Funcionamento</strong>
+        <span>Segunda a sábado, 11h às 23h</span>
+      </div>
+      <div class="footer-info">
+        <strong>Contato</strong>
+        <span>(31) 3333-0000</span>
+      </div>
+      <div class="footer-info">
+        <span>&copy; 2026 DevBite</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

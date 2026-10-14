@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevBite — lanchonete para profissionais de tecnologia. Confira o cardápio.">
+  <title>DevBite | Cardápio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement" id="announcement">Entrega grátis em pedidos acima de R$ 80,00.</div>
+
+  <!-- Cabeçalho com navegação principal -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo-link">DevBite</a>
+
+      <nav aria-label="Navegação principal" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" id="nav-cardapio" aria-current="page">Cardápio</a></li>
+          <li>
+            <a href="checkout.html" class="nav-link" id="nav-carrinho">
+              Meu Carrinho
+              <span class="cart-count" id="cart-count">4</span>
+            </a>
+          </li>
+          <li><a href="admin.html" class="nav-link" id="nav-admin">Área Restrita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <div class="page-title">
+        <h1>Cardápio</h1>
+        <p>Hambúrgueres, bebidas e sobremesas feitos na hora para quem passa o dia na frente do código.</p>
+      </div>
+
+      <!-- Lista de categorias -->
+      <nav class="categories" id="categories" aria-label="Categorias do cardápio">
+        <ul class="category-list" id="category-list">
+          <li>
+            <button type="button" class="category-btn active" id="cat-todos" data-category="todos">
+              Todos <span class="count">8</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="category-btn" id="cat-burgers" data-category="burgers">
+              Burgers <span class="count">3</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="category-btn" id="cat-bebidas" data-category="bebidas">
+              Bebidas <span class="count">3</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="category-btn" id="cat-sobremesas" data-category="sobremesas">
+              Sobremesas <span class="count">2</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Produtos -->
+      <div id="product-container">
+
+        <section class="product-section" id="section-burgers" data-category="burgers" aria-labelledby="title-burgers">
+          <div class="section-heading">
+            <h2 id="title-burgers">Burgers</h2>
+            <span>3 itens</span>
+          </div>
+          <div class="product-grid">
+
+            <article class="card-produto" id="produto-1" data-id="1" data-category="burgers">
+              <img src="img/stack-overflow-burger.jpg" alt="Stack Overflow Burger" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Stack Overflow Burger</h3>
+                <p class="card-desc">Quatro carnes de 90 g, cheddar derretido entre cada camada e pão brioche.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-1" data-price="34.90">R$ 34,90</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-1" data-id="1">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-produto" id="produto-2" data-id="2" data-category="burgers">
+              <img src="img/null-pointer-bacon.jpg" alt="Null Pointer Bacon" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Null Pointer Bacon</h3>
+                <p class="card-desc">Blend de 180 g, bacon crocante, queijo prato e barbecue.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-2" data-price="29.90">R$ 29,90</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-2" data-id="2">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-produto" id="produto-3" data-id="3" data-category="burgers">
+              <img src="img/full-stack-classico.jpg" alt="Full Stack Clássico" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Full Stack Clássico</h3>
+                <p class="card-desc">Carne de 160 g, cheddar, alface, tomate, picles e maionese da casa.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-3" data-price="27.90">R$ 27,90</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-3" data-id="3">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section class="product-section" id="section-bebidas" data-category="bebidas" aria-labelledby="title-bebidas">
+          <div class="section-heading">
+            <h2 id="title-bebidas">Bebidas</h2>
+            <span>3 itens</span>
+          </div>
+          <div class="product-grid">
+
+            <article class="card-produto" id="produto-4" data-id="4" data-category="bebidas">
+              <img src="img/java-coffee.jpg" alt="Java Coffee" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Java Coffee</h3>
+                <p class="card-desc">Espresso de grãos do Sul de Minas, servido na xícara.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-4" data-price="9.90">R$ 9,90</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-4" data-id="4">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-produto" id="produto-5" data-id="5" data-category="bebidas">
+              <img src="img/latte-async.jpg" alt="Latte Async" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Latte Async</h3>
+                <p class="card-desc">Espresso com leite vaporizado e chantilly. 300 ml.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-5" data-price="12.90">R$ 12,90</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-5" data-id="5">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-produto" id="produto-6" data-id="6" data-category="bebidas">
+              <img src="img/milkshake-release.jpg" alt="Milkshake Release" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Milkshake Release</h3>
+                <p class="card-desc">Morango batido com sorvete de creme e chantilly. 400 ml.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-6" data-price="14.90">R$ 14,90</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-6" data-id="6">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <section class="product-section" id="section-sobremesas" data-category="sobremesas" aria-labelledby="title-sobremesas">
+          <div class="section-heading">
+            <h2 id="title-sobremesas">Sobremesas</h2>
+            <span>2 itens</span>
+          </div>
+          <div class="product-grid">
+
+            <article class="card-produto" id="produto-7" data-id="7" data-category="sobremesas">
+              <img src="img/brownie-404.jpg" alt="Brownie 404" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Brownie 404</h3>
+                <p class="card-desc">Brownie de chocolate meio amargo com castanha-do-pará.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-7" data-price="12.00">R$ 12,00</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-7" data-id="7">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-produto" id="produto-8" data-id="8" data-category="sobremesas">
+              <img src="img/cookie-de-sessao.jpg" alt="Cookie de Sessão" width="600" height="450" loading="lazy">
+              <div class="card-body">
+                <h3>Cookie de Sessão</h3>
+                <p class="card-desc">Biscoito amanteigado recheado com geleia de frutas vermelhas. Porção com 3.</p>
+                <div class="card-footer">
+                  <span class="price" id="preco-produto-8" data-price="8.50">R$ 8,50</span>
+                  <button type="button" class="btn btn-primary btn-add-cart" id="btn-add-8" data-id="8">Adicionar ao Carrinho</button>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <span class="logo">DevBite</span>
+        <span>Lanchonete para profissionais de tecnologia.</span>
+      </div>
+      <div class="footer-info">
+        <strong>Funcionamento</strong>
+        <span>Segunda a sábado, 11h às 23h</span>
+      </div>
+      <div class="footer-info">
+        <strong>Contato</strong>
+        <span>(31) 3333-0000</span>
+      </div>
+      <div class="footer-info">
+        <span>&copy; 2026 DevBite</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

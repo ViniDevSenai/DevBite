@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevBite — painel administrativo.">
+  <title>DevBite | Painel Administrativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+  <!-- Menu administrativo lateral -->
+  <header class="admin-sidebar" id="admin-sidebar">
+    <a href="admin.html" class="logo" id="admin-logo-link">
+      DevBite
+      <span class="admin-tag">Admin</span>
+    </a>
+
+    <nav class="admin-nav" id="admin-nav" aria-label="Menu administrativo">
+      <p class="admin-nav-label">Gerenciamento</p>
+      <ul class="nav-list">
+        <li><a href="#dashboard" class="nav-link active" id="admin-nav-dashboard" aria-current="page">Dashboard</a></li>
+        <li><a href="#cadastro-produto" class="nav-link" id="admin-nav-cadastrar">Cadastrar Produto</a></li>
+        <li><a href="#pedidos-recentes" class="nav-link" id="admin-nav-pedidos">Pedidos</a></li>
+        <li><a href="#relatorios" class="nav-link" id="admin-nav-relatorios">Relatórios</a></li>
+      </ul>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+      <a href="index.html" id="admin-btn-voltar-loja">Voltar à loja</a>
+    </div>
+  </header>
+
+  <div class="admin-main">
+
+    <div class="admin-topbar" id="admin-topbar">
+      <div>
+        <h1 id="dashboard">Dashboard</h1>
+        <p>Terça-feira, 13 de outubro</p>
+      </div>
+      <div class="admin-user" id="admin-user">
+        <span>Administrador</span>
+        <span class="avatar" aria-hidden="true">AD</span>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-logout">Sair</button>
+      </div>
+    </div>
+
+    <main class="admin-content" id="main-content">
+
+      <!-- Indicadores -->
+      <section class="stats-grid" id="relatorios" aria-label="Resumo do dia">
+        <article class="stat-card" id="stat-pedidos">
+          <span class="stat-label">Pedidos hoje</span>
+          <span class="stat-value" id="stat-pedidos-valor">42</span>
+          <span class="stat-note">+12% em relação a ontem</span>
+        </article>
+        <article class="stat-card" id="stat-faturamento">
+          <span class="stat-label">Faturamento do dia</span>
+          <span class="stat-value" id="stat-faturamento-valor">R$ 1.837,00</span>
+          <span class="stat-note">+8% em relação a ontem</span>
+        </article>
+        <article class="stat-card" id="stat-ticket">
+          <span class="stat-label">Ticket médio</span>
+          <span class="stat-value" id="stat-ticket-valor">R$ 43,74</span>
+          <span class="stat-note">+3% em relação a ontem</span>
+        </article>
+        <article class="stat-card" id="stat-produtos">
+          <span class="stat-label">Produtos ativos</span>
+          <span class="stat-value" id="stat-produtos-valor">8</span>
+          <span class="stat-note">Em 3 categorias</span>
+        </article>
+      </section>
+
+      <div class="admin-grid">
+
+        <!-- Cadastro de produto -->
+        <section class="panel" id="cadastro-produto" aria-labelledby="cadastro-title">
+          <div class="panel-title">
+            <h2 id="cadastro-title">Cadastrar produto</h2>
+          </div>
+
+          <form class="form" id="product-form" name="product-form" action="#" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+              <label for="produto-nome">Nome</label>
+              <input type="text" class="form-control" id="produto-nome" name="produto-nome" required>
+            </div>
+
+            <div class="form-group">
+              <label for="produto-descricao">Descrição</label>
+              <textarea class="form-control" id="produto-descricao" name="produto-descricao" placeholder="Ingredientes e tamanho da porção"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="produto-preco">Preço (R$)</label>
+                <input type="number" class="form-control" id="produto-preco" name="produto-preco" placeholder="0,00" min="0" step="0.01" required>
+              </div>
+              <div class="form-group">
+                <label for="produto-categoria">Categoria</label>
+                <select class="form-control" id="produto-categoria" name="produto-categoria" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="burgers">Burgers</option>
+                  <option value="bebidas">Bebidas</option>
+                  <option value="sobremesas">Sobremesas</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="produto-imagem">Imagem</label>
+              <input type="file" class="file-input" id="produto-imagem" name="produto-imagem" accept="image/png, image/jpeg, image/webp">
+              <span class="form-hint">PNG, JPG ou WEBP, até 2 MB.</span>
+            </div>
+
+            <div class="form-actions">
+              <button type="reset" class="btn btn-secondary" id="btn-limpar-produto">Limpar</button>
+              <button type="submit" class="btn btn-primary" id="btn-salvar-produto">Salvar</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Pedidos recentes -->
+        <section class="panel" id="pedidos-recentes" aria-labelledby="pedidos-title">
+          <div class="panel-title">
+            <h2 id="pedidos-title">Pedidos recentes</h2>
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-atualizar-pedidos">Atualizar</button>
+          </div>
+
+          <ul class="order-list" id="order-list">
+
+            <li class="order-item" id="pedido-1043" data-id="1043">
+              <span class="order-id">Pedido #1043</span>
+              <span class="status status-pendente" id="status-pedido-1043">Pendente</span>
+              <div class="order-meta">
+                <span>Ada Lovelace</span>
+                <span>19:08</span>
+                <span>Pix</span>
+              </div>
+              <p class="order-items-text">1× Stack Overflow Burger, 2× Java Coffee, 1× Brownie 404</p>
+              <div class="order-actions">
+                <span class="price">R$ 71,70</span>
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-avancar-1043" data-id="1043">Iniciar preparo</button>
+              </div>
+            </li>
+
+            <li class="order-item" id="pedido-1042" data-id="1042">
+              <span class="order-id">Pedido #1042</span>
+              <span class="status status-preparo" id="status-pedido-1042">Em preparo</span>
+              <div class="order-meta">
+                <span>Linus Torvalds</span>
+                <span>18:51</span>
+                <span>Cartão</span>
+              </div>
+              <p class="order-items-text">2× Full Stack Clássico, 2× Latte Async</p>
+              <div class="order-actions">
+                <span class="price">R$ 86,60</span>
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-avancar-1042" data-id="1042">Marcar como entregue</button>
+              </div>
+            </li>
+
+            <li class="order-item" id="pedido-1041" data-id="1041">
+              <span class="order-id">Pedido #1041</span>
+              <span class="status status-entregue" id="status-pedido-1041">Entregue</span>
+              <div class="order-meta">
+                <span>Grace Hopper</span>
+                <span>18:27</span>
+                <span>Dinheiro</span>
+              </div>
+              <p class="order-items-text">1× Null Pointer Bacon, 1× Milkshake Release</p>
+              <div class="order-actions">
+                <span class="price">R$ 49,80</span>
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-detalhes-1041" data-id="1041">Ver detalhes</button>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="admin-footer" id="site-footer">
+      &copy; 2026 DevBite — Painel administrativo
+    </footer>
+  </div>
+
+</body>
+</html>
